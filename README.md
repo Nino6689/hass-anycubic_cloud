@@ -25,7 +25,7 @@ This is a **community fork** of the original [WaresWichall/hass-anycubic_cloud](
 - [Troubleshooting](#troubleshooting)
 - [Frontend card](#frontend-card)
 - [What's different from upstream](#whats-different-from-upstream-v022)
-- [Support the project](#support-the-project-)
+- [Support the project](#support-the-project)
 - [Credits](#credits)
 
 ---
