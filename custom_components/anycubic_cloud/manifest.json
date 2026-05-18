@@ -2,6 +2,7 @@
   "domain": "anycubic_cloud",
   "name": "Anycubic Cloud",
   "codeowners": [
+    "@Nino6689",
     "@WaresWichall"
   ],
   "config_flow": true,
@@ -11,10 +12,14 @@
     "image",
     "panel_custom"
   ],
-  "documentation": "https://www.home-assistant.io/integrations/anycubic_cloud",
+  "documentation": "https://github.com/Nino6689/hass-anycubic_cloud",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/WaresWichall/anycubic_cloud/issues",
-  "loggers": [],
-  "requirements": ["paho-mqtt>=1.6.1"],
-  "version": "0.2.2-nb1"
+  "issue_tracker": "https://github.com/Nino6689/hass-anycubic_cloud/issues",
+  "loggers": [
+    "custom_components.anycubic_cloud"
+  ],
+  "requirements": [
+    "paho-mqtt>=1.6.1"
+  ],
+  "version": "0.2.2-nb2"
 }
