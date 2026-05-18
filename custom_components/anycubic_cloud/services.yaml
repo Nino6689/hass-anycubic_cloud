@@ -99,6 +99,7 @@ print_and_upload_save_in_cloud:
       required: true
       selector:
         file:
+          accept: ".gcode,.pwsp,.pwsq,.zip"
 print_and_upload_no_cloud_save:
   fields:
     config_entry: *anycubic_config_entry

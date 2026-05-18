@@ -14,14 +14,14 @@
     "step": {
       "auth_mode_web": {
         "title": "Authentication Mode - Web",
-        "description": "Retrieve your token from https://cloud-universe.anycubic.com/file following the steps in the readme.",
+        "description": "Retrieve your token from the Anycubic Cloud website (see the integration readme for the exact steps — open your browser's developer console on the file page and read window.localStorage XX-Token).",
         "data": {
           "user_token": "User Token"
         }
       },
       "auth_mode_slicer": {
         "title": "Authentication Mode - Slicer Next",
-        "description": "Retrieve your token from %AppData%\\AnycubicSlicerNext\\AnycubicSlicerNext.conf following the steps in the readme.",
+        "description": "Retrieve the access_token from your Anycubic Slicer Next config (see the integration readme — on Windows it's AppData/AnycubicSlicerNext/AnycubicSlicerNext.conf; on macOS it's under Library/Application Support).",
         "data": {
           "user_token": "Slicer Access Token"
         }
