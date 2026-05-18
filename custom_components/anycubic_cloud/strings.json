@@ -1,0 +1,1075 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "Already configured.",
+      "reauth_successful": "Re-authentication successful."
+    },
+    "error": {
+      "invalid_auth": "Invalid authentication.",
+      "invalid_token": "Invalid user token.",
+      "cannot_connect": "Cannot connect.",
+      "no_printers": "No printers found.",
+      "invalid_printer": "Invalid printer."
+    },
+    "step": {
+      "auth_mode_web": {
+        "title": "Authentication Mode - Web",
+        "description": "Retrieve your token from https://cloud-universe.anycubic.com/file following the steps in the readme.",
+        "data": {
+          "user_token": "User Token"
+        }
+      },
+      "auth_mode_slicer": {
+        "title": "Authentication Mode - Slicer Next",
+        "description": "Retrieve your token from %AppData%\\AnycubicSlicerNext\\AnycubicSlicerNext.conf following the steps in the readme.",
+        "data": {
+          "user_token": "Slicer Access Token"
+        }
+      },
+      "auth_mode_android": {
+        "title": "Authentication Mode - Android App",
+        "description": "Requires both token and device_id.",
+        "data": {
+          "user_token": "User Token",
+          "user_device_id": "Device ID (Required for Android)"
+        }
+      },
+      "printer": {
+        "title": "Choose your printers.",
+        "data": {
+          "printer_ids": "Monitored Printers"
+        }
+      },
+      "auth_mode_pick": {
+        "title": "Authentication Mode",
+        "description": "Which authentication mode would you like to use?",
+        "menu_options": {
+          "auth_mode_web": "Web (No MQTT)",
+          "auth_mode_slicer": "Slicer Next (Win)",
+          "auth_mode_android": "Android"
+        }
+      },
+      "reauth_or_choose_printer": {
+        "title": "Re-Auth or Printer Select",
+        "description": "Are you re-authenticating or changing your monitored printer(s)?",
+        "menu_options": {
+          "reauth": "Re-Authenticate",
+          "printer": "Change Printer(s)"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "options_menu": {
+        "title": "Anycubic Cloud Options",
+        "menu_options": {
+          "mqtt": "MQTT Settings",
+          "drying": "Drying Presets",
+          "card_config": "Panel Card Config",
+          "debug": "Debug Settings"
+        }
+      },
+      "mqtt": {
+        "title": "MQTT Settings",
+        "data": {
+          "mqtt_connect_mode": "MQTT Connection Mode"
+        }
+      },
+      "drying": {
+        "title": "Drying Presets",
+        "data": {
+          "drying_preset_duration_1": "Dry Preset 1 Duration",
+          "drying_preset_temperature_1": "Dry Preset 1 Temperature",
+          "drying_preset_duration_2": "Dry Preset 2 Duration",
+          "drying_preset_temperature_2": "Dry Preset 2 Temperature",
+          "drying_preset_duration_3": "Dry Preset 3 Duration",
+          "drying_preset_temperature_3": "Dry Preset 3 Temperature",
+          "drying_preset_duration_4": "Dry Preset 4 Duration",
+          "drying_preset_temperature_4": "Dry Preset 4 Temperature"
+        }
+      },
+      "card_config": {
+        "title": "Panel Card Config",
+        "data": {
+          "card_config": "Panel Card Config (YAML format)"
+        }
+      },
+      "debug": {
+        "title": "Debug Settings",
+        "data": {
+          "debug_mqtt_msg": "Debug Log all MQTT messages",
+          "debug_api_calls": "Debug Log all API calls"
+        }
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "job_in_progress": {
+        "name": "Job In Progress"
+      },
+      "job_complete": {
+        "name": "Job Complete"
+      },
+      "job_failed": {
+        "name": "Job Failed"
+      },
+      "job_is_paused": {
+        "name": "Job Paused"
+      },
+      "printer_online": {
+        "name": "Printer Online"
+      },
+      "mqtt_connection_active": {
+        "name": "MQTT Connection Active"
+      },
+      "is_busy": {
+        "name": "Is Busy"
+      },
+      "is_available": {
+        "name": "Is Available"
+      },
+      "dry_status_is_drying": {
+        "name": "Drying Active"
+      },
+      "secondary_dry_status_is_drying": {
+        "name": "Secondary Drying Active"
+      }
+    },
+    "button": {
+      "drying_start_preset_1": {
+        "name": "Drying Preset 1"
+      },
+      "drying_start_preset_2": {
+        "name": "Drying Preset 2"
+      },
+      "drying_start_preset_3": {
+        "name": "Drying Preset 3"
+      },
+      "drying_start_preset_4": {
+        "name": "Drying Preset 4"
+      },
+      "drying_stop": {
+        "name": "Drying Stop"
+      },
+      "secondary_drying_start_preset_1": {
+        "name": "Secondary Drying Preset 1"
+      },
+      "secondary_drying_start_preset_2": {
+        "name": "Secondary Drying Preset 2"
+      },
+      "secondary_drying_start_preset_3": {
+        "name": "Secondary Drying Preset 3"
+      },
+      "secondary_drying_start_preset_4": {
+        "name": "Secondary Drying Preset 4"
+      },
+      "secondary_drying_stop": {
+        "name": "Secondary Drying Stop"
+      },
+      "pause_print": {
+        "name": "Pause Print"
+      },
+      "resume_print": {
+        "name": "Resume Print"
+      },
+      "cancel_print": {
+        "name": "Cancel Print"
+      },
+      "request_file_list_local": {
+        "name": "Request File List (Local)"
+      },
+      "request_file_list_udisk": {
+        "name": "Request File List (USB Disk)"
+      },
+      "request_file_list_cloud": {
+        "name": "Request File List (Cloud)"
+      },
+      "refresh_mqtt_connection": {
+        "name": "Refresh MQTT Connection"
+      }
+    },
+    "image": {
+      "job_image_url": {
+        "name": "Job Preview"
+      }
+    },
+    "sensor": {
+      "current_status": {
+        "name": "Current Status"
+      },
+      "curr_nozzle_temp": {
+        "name": "Nozzle Temperature"
+      },
+      "curr_hotbed_temp": {
+        "name": "Hotbed Temperature"
+      },
+      "job_name": {
+        "name": "Job Name"
+      },
+      "job_progress": {
+        "name": "Job Progress %"
+      },
+      "job_time_elapsed": {
+        "name": "Job Time Elapsed"
+      },
+      "job_time_remaining": {
+        "name": "Job Time Remaining"
+      },
+      "job_eta": {
+        "name": "Job ETA"
+      },
+      "job_state": {
+        "name": "Job State"
+      },
+      "job_current_layer": {
+        "name": "Job Current Layer"
+      },
+      "job_total_layers": {
+        "name": "Job Total Layers"
+      },
+      "job_speed_mode": {
+        "name": "Job Speed Mode"
+      },
+      "job_z_thick": {
+        "name": "Job Z Thickness"
+      },
+      "job_model_height": {
+        "name": "Job Model Height"
+      },
+      "job_anti_alias_count": {
+        "name": "Job Anti Alias"
+      },
+      "job_on_time": {
+        "name": "Job On Time"
+      },
+      "job_off_time": {
+        "name": "Job Off Time"
+      },
+      "job_bottom_time": {
+        "name": "Job Bottom Time"
+      },
+      "job_bottom_layers": {
+        "name": "Job Bottom Layers"
+      },
+      "job_z_up_height": {
+        "name": "Job Z Up Height"
+      },
+      "job_z_up_speed": {
+        "name": "Job Z Up Speed"
+      },
+      "job_z_down_speed": {
+        "name": "Job Z Down Speed"
+      },
+      "target_nozzle_temp": {
+        "name": "Target Nozzle Temperature"
+      },
+      "target_hotbed_temp": {
+        "name": "Target Hotbed Temperature"
+      },
+      "print_speed_pct": {
+        "name": "Print Speed %"
+      },
+      "fan_speed_pct": {
+        "name": "Fan Speed %"
+      },
+      "file_list_local": {
+        "name": "File List (Local)"
+      },
+      "file_list_udisk": {
+        "name": "File List (USB Disk)"
+      },
+      "file_list_cloud": {
+        "name": "File List (Cloud)"
+      },
+      "ace_spools": {
+        "name": "ACE Spools"
+      },
+      "ace_current_temperature": {
+        "name": "ACE Current Temperature"
+      },
+      "dry_status_target_temperature": {
+        "name": "Drying Target Temperature"
+      },
+      "dry_status_total_duration": {
+        "name": "Drying Total Duration"
+      },
+      "dry_status_remaining_time": {
+        "name": "Drying Remaining Time"
+      },
+      "secondary_ace_spools": {
+        "name": "Secondary ACE Spools"
+      },
+      "secondary_ace_current_temperature": {
+        "name": "Secondary ACE Current Temperature"
+      },
+      "secondary_dry_status_target_temperature": {
+        "name": "Secondary Drying Target Temperature"
+      },
+      "secondary_dry_status_total_duration": {
+        "name": "Secondary Drying Total Duration"
+      },
+      "secondary_dry_status_remaining_time": {
+        "name": "Secondary Drying Remaining Time"
+      }
+    },
+    "switch": {
+      "multi_color_box_runout_refill": {
+        "name": "ACE Run-out Refill"
+      },
+      "secondary_multi_color_box_runout_refill": {
+        "name": "Secondary ACE Run-out Refill"
+      },
+      "manual_mqtt_connection_enabled": {
+        "name": "Manual MQTT Connection Enabled"
+      }
+    },
+    "update": {
+      "fw_version": {
+        "name": "Printer Firmware"
+      },
+      "multi_color_box_fw_version": {
+        "name": "ACE Firmware"
+      },
+      "secondary_multi_color_box_fw_version": {
+        "name": "Secondary ACE Firmware"
+      }
+    }
+  },
+  "services": {
+    "multi_color_box_set_slot_pla": {
+      "name": "ACE Set Slot - PLA",
+      "description": "Sets PLA slot properties in ACE unit.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "box_id": {
+          "name": "Box ID",
+          "description": "Box ID (0-1)."
+        },
+        "slot_number": {
+          "name": "Slot Number",
+          "description": "Slot Number (1-4)."
+        },
+        "slot_color_red": {
+          "name": "Slot Color Red",
+          "description": "Slot Color Red (0-255)."
+        },
+        "slot_color_green": {
+          "name": "Slot Color Green",
+          "description": "Slot Color Green (0-255)."
+        },
+        "slot_color_blue": {
+          "name": "Slot Color Blue",
+          "description": "Slot Color Blue (0-255)."
+        }
+      }
+    },
+    "multi_color_box_set_slot_petg": {
+      "name": "ACE Set Slot - PETG",
+      "description": "Sets PETG slot properties in ACE unit.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "box_id": {
+          "name": "Box ID",
+          "description": "Box ID (0-1)."
+        },
+        "slot_number": {
+          "name": "Slot Number",
+          "description": "Slot Number (1-4)."
+        },
+        "slot_color_red": {
+          "name": "Slot Color Red",
+          "description": "Slot Color Red (0-255)."
+        },
+        "slot_color_green": {
+          "name": "Slot Color Green",
+          "description": "Slot Color Green (0-255)."
+        },
+        "slot_color_blue": {
+          "name": "Slot Color Blue",
+          "description": "Slot Color Blue (0-255)."
+        }
+      }
+    },
+    "multi_color_box_set_slot_abs": {
+      "name": "ACE Set Slot - ABS",
+      "description": "Sets ABS slot properties in ACE unit.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "box_id": {
+          "name": "Box ID",
+          "description": "Box ID (0-1)."
+        },
+        "slot_number": {
+          "name": "Slot Number",
+          "description": "Slot Number (1-4)."
+        },
+        "slot_color_red": {
+          "name": "Slot Color Red",
+          "description": "Slot Color Red (0-255)."
+        },
+        "slot_color_green": {
+          "name": "Slot Color Green",
+          "description": "Slot Color Green (0-255)."
+        },
+        "slot_color_blue": {
+          "name": "Slot Color Blue",
+          "description": "Slot Color Blue (0-255)."
+        }
+      }
+    },
+    "multi_color_box_set_slot_pacf": {
+      "name": "ACE Set Slot - PACF",
+      "description": "Sets PACF slot properties in ACE unit.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "box_id": {
+          "name": "Box ID",
+          "description": "Box ID (0-1)."
+        },
+        "slot_number": {
+          "name": "Slot Number",
+          "description": "Slot Number (1-4)."
+        },
+        "slot_color_red": {
+          "name": "Slot Color Red",
+          "description": "Slot Color Red (0-255)."
+        },
+        "slot_color_green": {
+          "name": "Slot Color Green",
+          "description": "Slot Color Green (0-255)."
+        },
+        "slot_color_blue": {
+          "name": "Slot Color Blue",
+          "description": "Slot Color Blue (0-255)."
+        }
+      }
+    },
+    "multi_color_box_set_slot_pc": {
+      "name": "ACE Set Slot - PC",
+      "description": "Sets PC slot properties in ACE unit.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "box_id": {
+          "name": "Box ID",
+          "description": "Box ID (0-1)."
+        },
+        "slot_number": {
+          "name": "Slot Number",
+          "description": "Slot Number (1-4)."
+        },
+        "slot_color_red": {
+          "name": "Slot Color Red",
+          "description": "Slot Color Red (0-255)."
+        },
+        "slot_color_green": {
+          "name": "Slot Color Green",
+          "description": "Slot Color Green (0-255)."
+        },
+        "slot_color_blue": {
+          "name": "Slot Color Blue",
+          "description": "Slot Color Blue (0-255)."
+        }
+      }
+    },
+    "multi_color_box_set_slot_asa": {
+      "name": "ACE Set Slot - ASA",
+      "description": "Sets ASA slot properties in ACE unit.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "box_id": {
+          "name": "Box ID",
+          "description": "Box ID (0-1)."
+        },
+        "slot_number": {
+          "name": "Slot Number",
+          "description": "Slot Number (1-4)."
+        },
+        "slot_color_red": {
+          "name": "Slot Color Red",
+          "description": "Slot Color Red (0-255)."
+        },
+        "slot_color_green": {
+          "name": "Slot Color Green",
+          "description": "Slot Color Green (0-255)."
+        },
+        "slot_color_blue": {
+          "name": "Slot Color Blue",
+          "description": "Slot Color Blue (0-255)."
+        }
+      }
+    },
+    "multi_color_box_set_slot_hips": {
+      "name": "ACE Set Slot - HIPS",
+      "description": "Sets HIPS slot properties in ACE unit.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "box_id": {
+          "name": "Box ID",
+          "description": "Box ID (0-1)."
+        },
+        "slot_number": {
+          "name": "Slot Number",
+          "description": "Slot Number (1-4)."
+        },
+        "slot_color_red": {
+          "name": "Slot Color Red",
+          "description": "Slot Color Red (0-255)."
+        },
+        "slot_color_green": {
+          "name": "Slot Color Green",
+          "description": "Slot Color Green (0-255)."
+        },
+        "slot_color_blue": {
+          "name": "Slot Color Blue",
+          "description": "Slot Color Blue (0-255)."
+        }
+      }
+    },
+    "multi_color_box_set_slot_pa": {
+      "name": "ACE Set Slot - PA",
+      "description": "Sets PA slot properties in ACE unit.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "box_id": {
+          "name": "Box ID",
+          "description": "Box ID (0-1)."
+        },
+        "slot_number": {
+          "name": "Slot Number",
+          "description": "Slot Number (1-4)."
+        },
+        "slot_color_red": {
+          "name": "Slot Color Red",
+          "description": "Slot Color Red (0-255)."
+        },
+        "slot_color_green": {
+          "name": "Slot Color Green",
+          "description": "Slot Color Green (0-255)."
+        },
+        "slot_color_blue": {
+          "name": "Slot Color Blue",
+          "description": "Slot Color Blue (0-255)."
+        }
+      }
+    },
+    "multi_color_box_set_slot_pla_se": {
+      "name": "ACE Set Slot - PLA SE",
+      "description": "Sets PLA SE slot properties in ACE unit.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "box_id": {
+          "name": "Box ID",
+          "description": "Box ID (0-1)."
+        },
+        "slot_number": {
+          "name": "Slot Number",
+          "description": "Slot Number (1-4)."
+        },
+        "slot_color_red": {
+          "name": "Slot Color Red",
+          "description": "Slot Color Red (0-255)."
+        },
+        "slot_color_green": {
+          "name": "Slot Color Green",
+          "description": "Slot Color Green (0-255)."
+        },
+        "slot_color_blue": {
+          "name": "Slot Color Blue",
+          "description": "Slot Color Blue (0-255)."
+        }
+      }
+    },
+    "multi_color_box_filament_extrude": {
+      "name": "ACE Filament Extrude",
+      "description": "Activate filament extrude on ACE.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "box_id": {
+          "name": "Box ID",
+          "description": "Box ID (0-1)."
+        },
+        "slot_number": {
+          "name": "Slot Number",
+          "description": "Slot Number (1-4)."
+        },
+        "finished": {
+          "name": "Extrude Finished",
+          "description": "End filament extrusion command."
+        }
+      }
+    },
+    "multi_color_box_filament_retract": {
+      "name": "ACE Filament Retract",
+      "description": "Activate filament retract on ACE.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "box_id": {
+          "name": "Box ID",
+          "description": "Box ID (0-1)."
+        }
+      }
+    },
+    "print_and_upload_save_in_cloud": {
+      "name": "Print and upload (save in user cloud).",
+      "description": "Print and upload, save in user cloud store.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "slot_number": {
+          "name": "Slot Number List",
+          "description": "Slot Number List (1-4) to map to print colours. e.g. [1, 2]"
+        },
+        "uploaded_gcode_file": {
+          "name": "Gcode File",
+          "description": "The sliced .gcode file."
+        }
+      }
+    },
+    "print_and_upload_no_cloud_save": {
+      "name": "Print and upload (no cloud save).",
+      "description": "Print and upload, but don't save in user cloud store.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "slot_number": {
+          "name": "Slot Number List",
+          "description": "Slot Number List (1-4) to map to print colours. e.g. [1, 2]"
+        },
+        "uploaded_gcode_file": {
+          "name": "Gcode File",
+          "description": "The sliced .gcode file."
+        }
+      }
+    },
+    "delete_file_local": {
+      "name": "Delete file (Local)",
+      "description": "Delete a file from printer local storage.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "filename": {
+          "name": "File Name",
+          "description": "Full file name (with extension)"
+        }
+      }
+    },
+    "delete_file_udisk": {
+      "name": "Delete file (USB Disk)",
+      "description": "Delete a file from printer USB disk.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "filename": {
+          "name": "File Name",
+          "description": "Full file name (with extension)"
+        }
+      }
+    },
+    "delete_file_cloud": {
+      "name": "Delete file (Cloud)",
+      "description": "Delete a file from user cloud store.",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "file_id": {
+          "name": "File ID",
+          "description": "Cloud file ID"
+        }
+      }
+    },
+    "change_print_speed_mode": {
+      "name": "Change Print Speed Mode",
+      "description": "Change Print Speed Mode",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "speed_mode": {
+          "name": "Speed Mode",
+          "description": "Speed Mode"
+        }
+      }
+    },
+    "change_print_target_nozzle_temperature": {
+      "name": "Change Print Nozzle Temperature",
+      "description": "Change Print Nozzle Temperature",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "temperature": {
+          "name": "Nozzle Temperature",
+          "description": "Nozzle Temperature"
+        }
+      }
+    },
+    "change_print_target_hotbed_temperature": {
+      "name": "Change Print Hotbed Temperature",
+      "description": "Change Print Hotbed Temperature",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "temperature": {
+          "name": "Hotbed Temperature",
+          "description": "Hotbed Temperature"
+        }
+      }
+    },
+    "change_print_fan_speed": {
+      "name": "Change Print Fan Speed",
+      "description": "Change Print Fan Speed",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "speed": {
+          "name": "Fan Speed",
+          "description": "Fan Speed"
+        }
+      }
+    },
+    "change_print_aux_fan_speed": {
+      "name": "Change Print Aux Fan Speed",
+      "description": "Change Print Aux Fan Speed",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "speed": {
+          "name": "Aux Fan Speed",
+          "description": "Aux Fan Speed"
+        }
+      }
+    },
+    "change_print_box_fan_speed": {
+      "name": "Change Print Box Fan Speed",
+      "description": "Change Print Box Fan Speed",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "speed": {
+          "name": "Box Fan Speed",
+          "description": "Box Fan Speed"
+        }
+      }
+    },
+    "change_print_bottom_layers": {
+      "name": "Change Print Bottom Layers",
+      "description": "Change Print Bottom Layers",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "layers": {
+          "name": "Bottom Layers",
+          "description": "Bottom Layers"
+        }
+      }
+    },
+    "change_print_bottom_time": {
+      "name": "Change Print Bottom Time",
+      "description": "Change Print Bottom Time",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "time": {
+          "name": "Bottom Time",
+          "description": "Bottom Time"
+        }
+      }
+    },
+    "change_print_off_time": {
+      "name": "Change Print Off Time",
+      "description": "Change Print Off Time",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "time": {
+          "name": "Off Time",
+          "description": "Off Time"
+        }
+      }
+    },
+    "change_print_on_time": {
+      "name": "Change Print On Time",
+      "description": "Change Print On Time",
+      "fields": {
+        "config_entry": {
+          "name": "Config Entry",
+          "description": "The config entry to use for this service."
+        },
+        "device_id": {
+          "name": "Printer Device",
+          "description": "Printer Device (if not using ID)."
+        },
+        "printer_id": {
+          "name": "Printer ID",
+          "description": "Printer ID (if not using device)."
+        },
+        "time": {
+          "name": "On Time",
+          "description": "On Time"
+        }
+      }
+    }
+  },
+  "exceptions": {}
+}
